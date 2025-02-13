@@ -2,10 +2,14 @@ const yesBtn = document.querySelector('#yesBtn');
 const noBtn = document.querySelector('#noBtn');
 const mensajeAmor = document.querySelector('#mensajeAmor');
 const corazonesContainer = document.querySelector('.corazones');
+const musica = document.querySelector('#musica');
 
 yesBtn.addEventListener('click', function () {
     document.querySelector('.contenedor').style.display = 'none';
     mensajeAmor.style.display = 'block';
+
+    musica.play();
+    musica.volume = 0.5;
 
     for (let i = 0; i < 20; i++) {
         let corazon = document.createElement('div');
@@ -20,7 +24,7 @@ yesBtn.addEventListener('click', function () {
 
         setTimeout(() => {
             corazon.remove();
-        }, 6000);
+        }, 10000);
     }
 });
 
